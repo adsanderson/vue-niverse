@@ -1,0 +1,15 @@
+{
+  "name": "vue-niverse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/adsanderson/vue-niverse.git",
+  "author": "Adam Sanderson <lazydayed@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "vue-cli": "vue",
+    "build-comp": "vue build --host 0.0.0.0 --config component-build.config.js"
+  },
+  "devDependencies": {
+    "vue-cli": "^2.8.1"
+  }
+}
