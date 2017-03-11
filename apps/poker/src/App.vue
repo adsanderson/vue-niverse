@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <form>
+      <textarea id="incoming"></textarea>
+      <button type="submit">submit</button>
+    </form>
     <poker-description></poker-description>
     <poker-counters 
       v-bind:connected="connected"

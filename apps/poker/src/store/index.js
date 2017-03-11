@@ -1,22 +1,7 @@
 // @flow
 
-type Result = {
-  high: number,
-  low: number,
-  median: number
-}
-
-type State = {
-  message: string,
-  description: string,
-  activeValue?: number,
-  fib: Array<number>,
-  connected: number,
-  submitted: number,
-  result: Result
-}
-
 import setResult from './setResult'
+import type { State } from './storeState'
 
 const state: State = {
   message: 'Hello!',
@@ -43,3 +28,29 @@ export default {
     state.result = setResult(state.connected, state.submitted, [state.activeValue])
   }
 }
+
+// import Peer from 'simple-peer'
+// import * as Peer from 'simple-peer'
+
+// var p = new Peer({ initiator: location.hash === '#1', trickle: false })
+
+// p.on('error', function (err) { console.log('error', err) })
+
+// p.on('signal', function (data) {
+//   console.log('SIGNAL', JSON.stringify(data))
+//   // document.querySelector('#outgoing').textContent = JSON.stringify(data)
+// })
+
+// // document.querySelector('form').addEventListener('submit', function (ev) {
+// //   ev.preventDefault()
+// //   p.signal(JSON.parse(document.querySelector('#incoming').value))
+// // })
+
+// p.on('connect', function () {
+//   console.log('CONNECT')
+//   p.send('whatever' + Math.random())
+// })
+
+// p.on('data', function (data) {
+//   console.log('data: ' + data)
+// })
