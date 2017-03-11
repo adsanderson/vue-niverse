@@ -2,25 +2,33 @@
   <div class="poker-card-container">
     <poker-card 
       v-for="val in cardValues" 
+      :key="val"
       v-bind:value="val" 
-      v-bind:isActive="false"
+      v-bind:isActive="cardIsActive(val)"
       v-on:pokerToggle="toggle"></poker-card>      
   </div>
 </template>
 
 <script>
+
+import pokerCard from './poker-card'
+
 export default {
   name: 'poker-card-container',
-  props: ['cardValues', 'selectedIndex'],
-  data() {
+  props: ['cardValues', 'activeValue'],
+  data () {
     return {}
   },
   components: {
-    'poker-card': () => import('./poker-card')
+    'poker-card': pokerCard
   },
   methods: {
-    toggle(value) {
-      this.$emit('pokerToggle', arguments)
+    toggle (value) {
+      this.$emit('pokerToggle', value)
+    },
+    cardIsActive (val) {
+      if (val === this.activeValue) return true
+      return false
     }
   }
 }

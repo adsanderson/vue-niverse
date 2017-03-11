@@ -1,22 +1,12 @@
 <template>
-  <div class="poker-card" v-bind:class="{ 'poker-card--active': isActive }" v-on:click="activate">
-    {{ value }}
+  <div class="poker-card">
+    <input type="text">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'poker-card',
-  props: ['value', 'isActive'],
-  data() {
-    return {}
-  },
-  methods: {
-    activate(e) {
-      console.log('test', this.isCardActive);
-      this.$emit('pokerToggle', 'yello');
-    }
-  }
+  name: 'poker-description'
 }
 </script>
 
